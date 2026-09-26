@@ -10,7 +10,6 @@ with full covenant integration.
 """
 
 from fastapi import FastAPI
-from fastapi.responses import RedirectResponse
 from starlette.middleware.cors import CORSMiddleware
 from starlette.staticfiles import StaticFiles
 import os
@@ -44,14 +43,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Serve frontend static files
-frontend_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'frontend', 'dist')
-if os.path.exists(frontend_path):
-    app.mount('/app', StaticFiles(directory=frontend_path, html=True), name='frontend')
-    logger.info(f"✅ Frontend served from /app (directory: {frontend_path})")
-else:
-    logger.warning(f"⚠️ Frontend not built. Run 'npm run build' in frontend/ directory. (Missing: {frontend_path})")
-
 # Include all route modules under /api
 app.include_router(chat_router)
 app.include_router(cognitive_router)
@@ -62,6 +53,14 @@ app.include_router(extras_router)
 app.include_router(evaluation_router)
 app.include_router(image_router)
 # app.include_router(test_router)  # removed (deleted)
+
+# Serve the frontend after API routes so one server handles both.
+frontend_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'frontend')
+if os.path.isfile(os.path.join(frontend_path, 'index.html')):
+    app.mount('/', StaticFiles(directory=frontend_path, html=True), name='frontend')
+    logger.info(f"✅ Frontend served from / (directory: {frontend_path})")
+else:
+    logger.warning(f"⚠️ Frontend not found. (Missing: {frontend_path}/index.html)")
 
 
 @app.on_event("startup")
@@ -88,7 +87,3 @@ if __name__ == "__main__":
     import uvicorn
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)
-
-@app.get("/")
-async def root():
-    return RedirectResponse(url="/app")

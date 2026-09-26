@@ -1,6 +1,6 @@
 "use strict";
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "";
 const SESSION_KEY = "quantum-mcagi-session";
 
 const connection = document.querySelector("#connection");
