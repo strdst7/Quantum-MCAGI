@@ -584,14 +584,13 @@ If you use Quantum-MCAGI in research, publications, or derivative work, please r
 >
 > It is the emergence of memory, reasoning, learning, reflection, and adaptation working together as one evolving system.
 
----
 
 <div align="center">
 
-### ⚛️ Quantum-MCAGI
+#### ⚛️ Quantum-MCAGI
 
-**Think. Learn. Research. Evolve. Explain.**
+**Think • Learn • Research • Evolve • Explain**
 
-Built for researchers exploring the frontier between AI systems, cognition, and emerging intelligence.
+#### Built by **aimirah** · **MI4 Inc.**
 
 </div>
