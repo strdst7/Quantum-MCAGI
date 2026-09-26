@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101313">
+    <meta name="description" content="A local chat interface for Quantum MCAGI.">
+    <link rel="icon" href="data:,">
+    <title>Quantum MCAGI</title>
+    <link rel="stylesheet" href="./app.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Conversation sidebar">
+        <a class="wordmark" href="./" aria-label="Quantum MCAGI home">
+          <span class="wordmark-symbol" aria-hidden="true">Q</span>
+          <span>Quantum MCAGI</span>
+        </a>
+
+        <button class="new-chat-button" id="new-chat" type="button">
+          <span aria-hidden="true">+</span>
+          New conversation
+        </button>
+
+        <div class="history-heading">
+          <h2>Recent conversations</h2>
+          <button id="refresh-history" class="icon-button" type="button" aria-label="Refresh conversations" title="Refresh conversations">
+            ↻
+          </button>
+        </div>
+        <nav id="session-list" class="session-list" aria-label="Recent conversations">
+          <p class="sidebar-message">Loading conversations</p>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <a href="http://127.0.0.1:8000/docs" target="_blank" rel="noreferrer">API reference <span aria-hidden="true">↗</span></a>
+          <p>This interface connects to the local API.</p>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">LOCAL INSTANCE</p>
+            <h1>Conversation</h1>
+          </div>
+          <div class="connection" id="connection" role="status" aria-live="polite">
+            <span class="connection-indicator" aria-hidden="true"></span>
+            <span class="connection-label">Checking API</span>
+          </div>
+        </header>
+
+        <section class="conversation" id="conversation" aria-label="Chat conversation" aria-live="polite">
+          <div class="welcome" id="welcome">
+            <div class="welcome-mark" aria-hidden="true">Q</div>
+            <h2>What would you like to explore?</h2>
+            <p>Ask a question or try a command. Your conversations are saved locally by the API.</p>
+            <div class="suggestions" aria-label="Suggested prompts">
+              <button type="button" data-prompt="What is quantum superposition?">Explain quantum superposition</button>
+              <button type="button" data-prompt="/status">Check system status</button>
+              <button type="button" data-prompt="/help">Show available commands</button>
+            </div>
+          </div>
+          <div class="message-list" id="message-list"></div>
+        </section>
+
+        <div class="composer-wrap">
+          <form class="composer" id="composer">
+            <label class="sr-only" for="message-input">Message Quantum MCAGI</label>
+            <textarea id="message-input" name="content" rows="1" placeholder="Ask Quantum MCAGI..." required maxlength="12000"></textarea>
+            <button class="send-button" id="send-button" type="submit" aria-label="Send message">
+              <span aria-hidden="true">↑</span>
+            </button>
+          </form>
+          <p class="composer-note">Enter to send. Shift + Enter for a new line.</p>
+          <p class="error-message" id="error-message" role="alert" hidden></p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
