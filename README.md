@@ -31,35 +31,28 @@
 #-contributing
  
 </div>
- 
 
-# Overview
 
-**Quantum-MCAGI** is an experimental cognitive architecture that investigates how intelligence can emerge from the interaction of specialised reasoning systems rather than a single monolithic model.
+### Quantum-MCAGI is an experimental research platform exploring the next generation of cognitive AI systems through a modular, self-evolving architecture.
 
-The platform combines:
+Rather than treating intelligence as a single model, Quantum-MCAGI investigates how specialised cognitive components can collaborate to produce reasoning, memory, research, adaptation, and explainability. The project combines quantum-inspired concepts, autonomous knowledge discovery, semantic reasoning mechanisms, and adaptive learning systems into a unified cognitive framework.
 
-- Quantum-inspired cognitive processing
-- Semantic reasoning
-- Autonomous research capabilities
-- Memory and knowledge systems
-- Self-improvement mechanisms
-- Personality and identity modelling
-- Explainable intelligence
-- Modular orchestration frameworks
+The architecture is designed around the principle that intelligence emerges from the interaction of multiple cognitive processes, including knowledge retrieval, research, reflection, personality modelling, reasoning, and response synthesis. Each subsystem operates as an independent component while contributing to a broader orchestration layer that coordinates decision making and behavioural adaptation.
 
-The goal is not merely generating outputs, but understanding how an adaptive cognitive system can:
+Quantum-MCAGI serves as a research environment for experimenting with:
 
-- Acquire knowledge
-- Reflect on information
-- Evolve behaviour
-- Explain decisions
-- Conduct research
-- Generate insights
-- Maintain contextual continuity
+- Artificial General Intelligence (AGI) architectures
+- Cognitive reasoning systems
+- Autonomous research agents
+- Self-evolving intelligence models
+- Explainable AI techniques
+- Knowledge representation and memory systems
+- Human-AI collaboration
+- Quantum-inspired computational frameworks
 
----
+The project prioritises modularity, transparency, and experimentation, making it easier to study how complex intelligence might emerge from interconnected cognitive systems rather than a monolithic approach.
 
+While Quantum-MCAGI is not an AGI system, it represents an exploration into the architectural foundations that may contribute to future advances in machine cognition.
 # 🎯 Vision
 
 Most AI systems focus on prediction.
